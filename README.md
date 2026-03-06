@@ -130,14 +130,6 @@ A combinação das três soluções propostas oferece uma estratégia imediata e
 
 ---
 
-## 10. Anexos (sugestões)
-
-* Runbook de rollout para Spot interruptions
-* Planilha de levantamento de buckets e padrões de acesso
-* Scripts Terraform/CloudFormation para automatizar as políticas
-
----
-
 **Assinatura do Responsável pelo Projeto:**
 
 Daniel Pedro
