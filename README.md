@@ -118,35 +118,7 @@ Este relatório resume a proposta de implementação de três (3) serviços AWS 
 
 ## 8. Diagrama de arquitetura (visão simplificada)
 
-```mermaid
-flowchart LR
-  subgraph Front
-    API[API Gateway]
-    User[Usuários/Clients]
-  end
-  subgraph Serverless
-    Lambda[Functions (Lambda)]
-    Event[EventBridge/S3 Events]
-  end
-  subgraph Compute
-    ASG[Auto Scaling Group]
-    Spot[EC2 Spot Instances]
-    OnDemand[EC2 On‑Demand]
-  end
-  subgraph Storage
-    S3[S3 (Intelligent‑Tiering + Lifecycle)]
-    Glacier[Glacier/Deep Archive]
-  end
-
-  User --> API --> Lambda
-  Event --> Lambda
-  Lambda --> S3
-  ASG --> Spot
-  ASG --> OnDemand
-  Spot --> S3
-  S3 --> Glacier
-  API --> ASG
-```
+![Diagram AWS](https://drive.google.com/file/d/1tr4pxe0t_jI8Hsn168VvzkGHKZUxpP4_/view?usp=sharing)
 
 > Observação: o diagrama acima mostra os componentes principais e os fluxos de dados: tráfego de API pode ser atendido por Lambda (serverless) ou por serviços em ASG (Spot/On‑Demand) para cargas que precisam de instância dedicada.
 
